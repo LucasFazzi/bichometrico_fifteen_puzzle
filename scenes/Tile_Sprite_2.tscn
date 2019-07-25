@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/selva2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/praia2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/polvo2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "2c",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "2b",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "2a",
+"speed": 5.0
+} ]
+
+[node name="Tile_Sprite_2" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "2a"
