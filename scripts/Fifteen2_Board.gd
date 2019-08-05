@@ -186,7 +186,7 @@ func check_pos():
 		stop()
 
 func stop():
-	
+
 	var Tile_Tween = [get_node("Tile_1/Tween"), get_node("Tile_2/Tween"),\
 	get_node("Tile_3/Tween"), get_node("Tile_4/Tween"), get_node("Tile_5/Tween"),\
 	get_node("Tile_6/Tween"), get_node("Tile_7/Tween"), get_node("Tile_8/Tween"),\
@@ -211,7 +211,21 @@ func stop():
 	Tile_Tween [14].stop_all()
 
 func _on_Button_pressed():
+	$botao_fifteen_animation.play("embaralhar_botao")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
 	get_tree().reload_current_scene()
 
 func _on_Button2_pressed():
+	$botao_fifteen_animation.play("inicio_botao")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
 	get_tree().change_scene("res://scenes/title_screen.tscn")

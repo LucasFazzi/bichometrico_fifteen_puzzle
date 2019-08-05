@@ -211,7 +211,22 @@ func stop():
 	Tile_Tween [14].stop_all()
 
 func _on_Button_pressed():
+	$botao_fifteen_animation.play("embaralhar_botao")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
 	get_tree().reload_current_scene()
 
 func _on_Button2_pressed():
+	$botao_fifteen_animation.play("inicio_botao")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
+	get_tree().reload_current_scene()
 	get_tree().change_scene("res://scenes/title_screen.tscn")

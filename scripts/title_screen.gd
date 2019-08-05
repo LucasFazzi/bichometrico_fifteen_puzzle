@@ -3,21 +3,23 @@ extends Node2D
 func _ready():
 	pass
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/Fifteen1.tscn")
-func _on_Button2_pressed():
-	get_tree().change_scene("res://scenes/Fifteen2.tscn")
-func _on_Button3_pressed():
-	get_tree().change_scene("res://scenes/Fifteen3.tscn")
-func _on_Button4_pressed():
-	get_tree().change_scene("res://scenes/Fifteen4.tscn")
-func _on_Button5_pressed():
-	get_tree().change_scene("res://scenes/Fifteen5.tscn")
-func _on_Button6_pressed():
-	get_tree().change_scene("res://scenes/Fifteen6.tscn")
-func _on_Button7_pressed():
-	get_tree().change_scene("res://scenes/Fifteen7.tscn")
-func _on_Button8_pressed():
-	get_tree().change_scene("res://scenes/Fifteen8.tscn")
-func _on_Button9_pressed():
-	get_tree().change_scene("res://scenes/Fifteen9.tscn")
+func _on_sobre_botao_pressed():
+	$animation_botoes.play("sobre_botao")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
+	get_tree().change_scene("res://scenes/jogar_screen.tscn")
+
+
+func _on_jogar_botao_pressed():
+	$animation_botoes.play("botao_jogar")
+	var waiting_timer = Timer.new()
+	waiting_timer.set_wait_time(0.3)
+	waiting_timer.set_one_shot(true)
+	self.add_child(waiting_timer)
+	waiting_timer.start()
+	yield(waiting_timer, "timeout")
+	get_tree().change_scene("res://scenes/jogar_screen.tscn")
