@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/jogar_screen.gd" type="Script" id=1]
+[ext_resource path="res://sprites/fundo.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tela facil.png" type="Texture" id=3]
+[ext_resource path="res://sprites/caixa texto1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/polvo_botao.png" type="Texture" id=5]
+[ext_resource path="res://sprites/praia_botao.png" type="Texture" id=6]
+[ext_resource path="res://sprites/selva_botao.png" type="Texture" id=7]
+[ext_resource path="res://sprites/botao_inicio.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Quicksand-Bold.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "botao_inicio"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("inicio_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.9, 0.9 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "botao_polvo"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("mar_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "botao_praia"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("praia_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "botao_selva"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("selva_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "texto"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.631373, 0.772549, 0.0901961, 1 ), Color( 0, 0.658824, 0.513726, 1 ), Color( 0.396078, 0.176471, 0.52549, 1 ), Color( 0.921569, 0.4, 0.0313726, 1 ), Color( 0.631373, 0.772549, 0.0901961, 1 ) ]
+}
+
+[node name="jogar_screen" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 31.0, 1149.0, 1241.0, 1219.0 ]
+}
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 896.5, 529 )
+scale = Vector2( 15.0078, 9.26563 )
+texture = ExtResource( 2 )
+
+[node name="fundo1" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 900, 526 )
+texture = ExtResource( 3 )
+
+[node name="caixatexto" type="Sprite" parent="."]
+position = Vector2( 1444, 531 )
+rotation = 1.5708
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 0.631373, 0.772549, 0.0901961, 1 )
+anchor_right = 1.0
+margin_left = 1650.0
+margin_top = 145.0
+margin_right = 2465.0
+margin_bottom = 597.0
+rect_rotation = 90.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_constants/table_hseparation = 0
+custom_constants/line_separation = -28
+text = "Escolha seu quebra-cabeça"
+
+[node name="mar_botao" type="Button" parent="."]
+margin_left = 941.0
+margin_top = 86.0
+margin_right = 1168.0
+margin_bottom = 307.0
+rect_rotation = 90.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="praia_botao" type="Button" parent="."]
+margin_left = 941.0
+margin_top = 423.0
+margin_right = 1168.0
+margin_bottom = 644.0
+rect_rotation = 90.0
+icon = ExtResource( 6 )
+flat = true
+
+[node name="selva_botao" type="Button" parent="."]
+margin_left = 941.0
+margin_top = 760.0
+margin_right = 1169.0
+margin_bottom = 981.0
+rect_rotation = 90.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="inicio_botao" type="Button" parent="."]
+margin_left = 171.0
+margin_top = 425.0
+margin_right = 446.0
+margin_bottom = 546.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.8, 0.8 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="animation_botoes" type="AnimationPlayer" parent="."]
+anims/botao_inicio = SubResource( 7 )
+anims/botao_polvo = SubResource( 3 )
+anims/botao_praia = SubResource( 4 )
+anims/botao_selva = SubResource( 5 )
+
+[node name="animation_texto" type="AnimationPlayer" parent="."]
+autoplay = "texto"
+anims/texto = SubResource( 6 )
+[connection signal="pressed" from="mar_botao" to="." method="_on_mar_botao_pressed"]
+[connection signal="pressed" from="praia_botao" to="." method="_on_praia_botao_pressed"]
+[connection signal="pressed" from="selva_botao" to="." method="_on_selva_botao_pressed"]
+[connection signal="pressed" from="inicio_botao" to="." method="_on_Button_pressed"]
