@@ -22,7 +22,7 @@ func _ready():
 	var tile13_born = load ("res://scenes/Tile_Sprite_13.tscn")
 	var tile14_born = load ("res://scenes/Tile_Sprite_14.tscn")
 	var tile15_born = load ("res://scenes/Tile_Sprite_15.tscn")
-
+	
 	var pos = [get_node("Pos_1").global_position, get_node("Pos_2").global_position,\
 	get_node("Pos_3").global_position, get_node("Pos_4").global_position,\
 	get_node("Pos_5").global_position, get_node("Pos_6").global_position,\
@@ -31,13 +31,13 @@ func _ready():
 	get_node("Pos_11").global_position, get_node("Pos_12").global_position,\
 	get_node("Pos_13").global_position, get_node("Pos_14").global_position,\
 	get_node("Pos_15").global_position]
-
+	
 	var pos_f = [pos[0],pos[1],pos[2],pos[3],pos[4],pos[5],pos[6],pos[7],\
 	pos[8],pos[9],pos[10],pos[11],pos[12],pos[13],pos[14]]
-
+	
 	var RAND_TILE = range(0,15)
 	RAND_TILE.shuffle()
-
+	
 	var RAND_GENERATOR1 = RAND_TILE [0]
 	var RAND_GENERATOR2 = RAND_TILE [1]
 	var RAND_GENERATOR3 = RAND_TILE [2]
@@ -73,77 +73,77 @@ func _ready():
 	tile_create [0] = tile1_born.instance()
 	get_node("Tile_1").add_child(tile_create [0])
 	tile_create [0].global_position = get_node("Tile_1").global_position
-	tile_create [0].play("1c")
+	tile_create [0].play("1d")
 
 	tile_create [1] = tile2_born.instance()
 	get_node("Tile_2").add_child(tile_create [1])
 	tile_create [1].global_position = get_node("Tile_2").global_position
-	tile_create [1].play("2c")
+	tile_create [1].play("2d")
 
 	tile_create [2] = tile3_born.instance()
 	get_node("Tile_3").add_child(tile_create [2])
 	tile_create [2].global_position = get_node("Tile_3").global_position
-	tile_create [2].play("3c")
+	tile_create [2].play("3d")
 
 	tile_create [3] = tile4_born.instance()
 	get_node("Tile_4").add_child(tile_create [3])
 	tile_create [3].global_position = get_node("Tile_4").global_position
-	tile_create [3].play("4c")
+	tile_create [3].play("4d")
 
 	tile_create [4] = tile5_born.instance()
 	get_node("Tile_5").add_child(tile_create [4])
 	tile_create [4].global_position = get_node("Tile_5").global_position
-	tile_create [4].play("5c")
+	tile_create [4].play("5d")
 
 	tile_create [5] = tile6_born.instance()
 	get_node("Tile_6").add_child(tile_create [5])
 	tile_create [5].global_position = get_node("Tile_6").global_position
-	tile_create [5].play("6c")
+	tile_create [5].play("6d")
 
 	tile_create [6] = tile7_born.instance()
 	get_node("Tile_7").add_child(tile_create [6])
 	tile_create [6].global_position = get_node("Tile_7").global_position
-	tile_create [6].play("7c")
+	tile_create [6].play("7d")
 
 	tile_create [7] = tile8_born.instance()
 	get_node("Tile_8").add_child(tile_create [7])
 	tile_create [7].global_position = get_node("Tile_8").global_position
-	tile_create [7].play("8c")
+	tile_create [7].play("8d")
 
 	tile_create [8] = tile9_born.instance()
 	get_node("Tile_9").add_child(tile_create [8])
 	tile_create [8].global_position = get_node("Tile_9").global_position
-	tile_create [8].play("9c")
+	tile_create [8].play("9d")
 
 	tile_create [9] = tile10_born.instance()
 	get_node("Tile_10").add_child(tile_create [9])
 	tile_create [9].global_position = get_node("Tile_10").global_position
-	tile_create [9].play("10c")
+	tile_create [9].play("10d")
 
 	tile_create [10] = tile11_born.instance()
 	get_node("Tile_11").add_child(tile_create [10])
 	tile_create [10].global_position = get_node("Tile_11").global_position
-	tile_create [10].play("11c")
+	tile_create [10].play("11d")
 
 	tile_create [11] = tile12_born.instance()
 	get_node("Tile_12").add_child(tile_create [11])
 	tile_create [11].global_position = get_node("Tile_12").global_position
-	tile_create [11].play("12c")
+	tile_create [11].play("12d")
 
 	tile_create [12] = tile13_born.instance()
 	get_node("Tile_13").add_child(tile_create [12])
 	tile_create [12].global_position = get_node("Tile_13").global_position
-	tile_create [12].play("13c")
+	tile_create [12].play("13d")
 
 	tile_create [13] = tile14_born.instance()
 	get_node("Tile_14").add_child(tile_create [13])
 	tile_create [13].global_position = get_node("Tile_14").global_position
-	tile_create [13].play("14c")
+	tile_create [13].play("14d")
 
 	tile_create [14] = tile15_born.instance()
 	get_node("Tile_15").add_child(tile_create [14])
 	tile_create [14].global_position = get_node("Tile_15").global_position
-	tile_create [14].play("15c")
+	tile_create [14].play("15d")
 
 func _process(delta):
 	check_pos()

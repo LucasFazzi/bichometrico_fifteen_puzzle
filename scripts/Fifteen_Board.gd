@@ -23,7 +23,6 @@ func _ready():
 	var tile14_born = load ("res://scenes/Tile_Sprite_14.tscn")
 	var tile15_born = load ("res://scenes/Tile_Sprite_15.tscn")
 	
-	
 	var pos = [get_node("Pos_1").global_position, get_node("Pos_2").global_position,\
 	get_node("Pos_3").global_position, get_node("Pos_4").global_position,\
 	get_node("Pos_5").global_position, get_node("Pos_6").global_position,\
@@ -150,68 +149,129 @@ func _process(delta):
 	check_pos()
 
 func check_pos():
-	if tile_create [0].position.x == 384 and tile_create [0].position.y == 129:
-		tile_pos_check [0] = true
-	if tile_create [1].position.x == 511 and tile_create [1].position.y == 129:
-		tile_pos_check [1] = true
-	if tile_create [2].position.x == 639 and tile_create [2].position.y == 129:
-		tile_pos_check [2] = true
-	if tile_create [3].position.x == 256 and tile_create [3].position.y == 256:
-		tile_pos_check [3] = true
-	if tile_create [4].position.x == 384 and tile_create [4].position.y == 256:
-		tile_pos_check [4] = true
-	if tile_create [5].position.x == 511 and tile_create [5].position.y == 256:
-		tile_pos_check [5] = true
-	if tile_create [6].position.x == 639 and tile_create [6].position.y == 256:
-		tile_pos_check [6] = true
-	if tile_create [7].position.x == 256 and tile_create [7].position.y == 384:
-		tile_pos_check [7] = true
-	if tile_create [8].position.x == 384 and tile_create [8].position.y == 384:
-		tile_pos_check [8] = true
-	if tile_create [9].position.x == 511 and tile_create [9].position.y == 384:
-		tile_pos_check [9] = true
-	if tile_create [10].position.x == 639 and tile_create [10].position.y == 384:
-		tile_pos_check [10] = true
-	if tile_create [11].position.x == 256 and tile_create [11].position.y == 512:
-		tile_pos_check [11] = true
-	if tile_create [12].position.x == 384 and tile_create [12].position.y == 512:
-		tile_pos_check [12] = true
-	if tile_create [13].position.x == 511 and tile_create [13].position.y == 512:
-		tile_pos_check [13] = true
-	if tile_create [14].position.x == 639 and tile_create [14].position.y == 512:
-		tile_pos_check [14] = true
 
-	if tile_pos_check == [true,true,true,true,true,true,true,true,true,true,\
-	true,true,true,true,true]:
+	if tile_create [0].global_position.x == 1230 and tile_create [0].global_position.y == 402:
+		tile_pos_check [0] = true
+	if not tile_create [0].global_position.x == 1230 and tile_create [0].global_position.y == 402:
+		tile_pos_check [0] = false
+
+	if tile_create [1].global_position.x == 1230 and tile_create [1].global_position.y == 624:
+		tile_pos_check [1] = true
+	if not tile_create [1].global_position.x == 1230 and tile_create [1].global_position.y == 624:
+		tile_pos_check [1] = false
+
+	if tile_create [2].global_position.x == 1230 and tile_create [2].global_position.y == 846:
+		tile_pos_check [2] = true
+	if not tile_create [2].global_position.x == 1230 and tile_create [2].global_position.y == 846:
+		tile_pos_check [2] = false
+
+	if tile_create [3].global_position.x == 1008 and tile_create [3].global_position.y == 180:
+		tile_pos_check [3] = true
+	if not tile_create [3].global_position.x == 1008 and tile_create [3].global_position.y == 180:
+		tile_pos_check [3] = false
+
+	if tile_create [4].global_position.x == 1008 and tile_create [4].global_position.y == 402:
+		tile_pos_check [4] = true
+	if not tile_create [4].global_position.x == 1008 and tile_create [4].global_position.y == 402:
+		tile_pos_check [4] = false
+
+	if tile_create [5].global_position.x == 1008 and tile_create [5].global_position.y == 624:
+		tile_pos_check [5] = true
+	if not tile_create [5].global_position.x == 1008 and tile_create [5].global_position.y == 624:
+		tile_pos_check [5] = false
+
+	if tile_create [6].global_position.x == 1008 and tile_create [6].global_position.y == 846:
+		tile_pos_check [6] = true
+	if not tile_create [6].global_position.x == 1008 and tile_create [6].global_position.y == 846:
+		tile_pos_check [6] = false
+
+	if tile_create [7].global_position.x == 786 and tile_create [7].global_position.y == 180:
+		tile_pos_check [7] = true
+	if not tile_create [7].global_position.x == 786 and tile_create [7].global_position.y == 180:
+		tile_pos_check [7] = false
+
+	if tile_create [8].global_position.x == 786 and tile_create [8].global_position.y == 402:
+		tile_pos_check [8] = true
+	if not tile_create [8].global_position.x == 786 and tile_create [8].global_position.y == 402:
+		tile_pos_check [8] = false
+
+	if tile_create [9].global_position.x == 786 and tile_create [9].global_position.y == 624:
+		tile_pos_check [9] = true
+	if not tile_create [9].global_position.x == 786 and tile_create [9].global_position.y == 624:
+		tile_pos_check [9] = false
+
+	if tile_create [10].global_position.x == 786 and tile_create [10].global_position.y == 846:
+		tile_pos_check [10] = true
+	if not tile_create [10].global_position.x == 786 and tile_create [10].global_position.y == 846:
+		tile_pos_check [10] = false
+
+	if tile_create [11].global_position.x == 564 and tile_create [11].global_position.y == 180:
+		tile_pos_check [11] = true
+	if not tile_create [11].global_position.x == 564 and tile_create [11].global_position.y == 180:
+		tile_pos_check [11] = false
+
+	if tile_create [12].global_position.x == 564 and tile_create [12].global_position.y == 402:
+		tile_pos_check [12] = true
+	if not tile_create [12].global_position.x == 564 and tile_create [12].global_position.y == 402:
+		tile_pos_check [12] = false
+
+	if tile_create [13].global_position.x == 564 and tile_create [13].global_position.y == 624:
+		tile_pos_check [13] = true
+	if not tile_create [13].global_position.x == 564 and tile_create [13].global_position.y == 624:
+		tile_pos_check [13] = false
+
+	if tile_create [14].global_position.x == 564 and tile_create [14].global_position.y == 846:
+		tile_pos_check [14] = true
+	if not tile_create [14].global_position.x == 564 and tile_create [14].global_position.y == 846:
+		tile_pos_check [14] = false
+
+	if tile_pos_check [0] == true and tile_create [0].global_position.x == 1230 and tile_create [0].global_position.y == 402 and\
+	tile_pos_check [1] == true and tile_create [1].global_position.x == 1230 and tile_create [1].global_position.y == 624 and\
+	tile_pos_check [2] == true and tile_create [2].global_position.x == 1230 and tile_create [2].global_position.y == 846 and\
+	tile_pos_check [3] == true and tile_create [3].global_position.x == 1008 and tile_create [3].global_position.y == 180 and\
+	tile_pos_check [4] == true and tile_create [4].global_position.x == 1008 and tile_create [4].global_position.y == 402 and\
+	tile_pos_check [5] == true and tile_create [5].global_position.x == 1008 and tile_create [5].global_position.y == 624 and\
+	tile_pos_check [6] == true and tile_create [6].global_position.x == 1008 and tile_create [6].global_position.y == 846 and\
+	tile_pos_check [7] == true and tile_create [7].global_position.x == 786 and tile_create [7].global_position.y == 180 and\
+	tile_pos_check [8] == true and tile_create [8].global_position.x == 786 and tile_create [8].global_position.y == 402 and\
+	tile_pos_check [9] == true and tile_create [9].global_position.x == 786 and tile_create [9].global_position.y == 624 and\
+	tile_pos_check [10] == true and tile_create [10].global_position.x == 786 and tile_create [10].global_position.y == 846 and\
+	tile_pos_check [11] == true and tile_create [11].global_position.x == 564 and tile_create [11].global_position.y == 180 and\
+	tile_pos_check [12] == true and tile_create [12].global_position.x == 564 and tile_create [12].global_position.y == 402 and\
+	tile_pos_check [13] == true and tile_create [13].global_position.x == 564 and tile_create [13].global_position.y == 624 and\
+	tile_pos_check [14] == true and tile_create [14].global_position.x == 564 and tile_create [14].global_position.y == 846:
 		stop()
 
 func stop():
-	
-	var Tile_Tween = [get_node("Tile_1/Tween"), get_node("Tile_2/Tween"),\
-	get_node("Tile_3/Tween"), get_node("Tile_4/Tween"), get_node("Tile_5/Tween"),\
-	get_node("Tile_6/Tween"), get_node("Tile_7/Tween"), get_node("Tile_8/Tween"),\
-	get_node("Tile_9/Tween"), get_node("Tile_10/Tween"), get_node("Tile_11/Tween"),\
-	get_node("Tile_12/Tween"), get_node("Tile_13/Tween"), get_node("Tile_14/Tween"),\
-	get_node("Tile_15/Tween")] 
-	
-	Tile_Tween [0].stop_all()
-	Tile_Tween [1].stop_all()
-	Tile_Tween [2].stop_all()
-	Tile_Tween [3].stop_all()
-	Tile_Tween [4].stop_all()
-	Tile_Tween [5].stop_all()
-	Tile_Tween [6].stop_all()
-	Tile_Tween [7].stop_all()
-	Tile_Tween [8].stop_all()
-	Tile_Tween [9].stop_all()
-	Tile_Tween [10].stop_all()
-	Tile_Tween [11].stop_all()
-	Tile_Tween [12].stop_all()
-	Tile_Tween [13].stop_all()
-	Tile_Tween [14].stop_all()
+	get_node("Tile_1/Tween").stop(Tween)
+	get_node("Tile_2/Tween").stop(Tween)
+	get_node("Tile_3/Tween").stop(Tween)
+	get_node("Tile_4/Tween").stop(Tween)
+	get_node("Tile_5/Tween").stop(Tween)
+	get_node("Tile_6/Tween").stop(Tween)
+	get_node("Tile_7/Tween").stop(Tween)
+	get_node("Tile_8/Tween").stop(Tween)
+	get_node("Tile_9/Tween").stop(Tween)
+	get_node("Tile_10/Tween").stop(Tween)
+	get_node("Tile_11/Tween").stop(Tween)
+	get_node("Tile_12/Tween").stop(Tween)
+	get_node("Tile_13/Tween").stop(Tween)
+	get_node("Tile_14/Tween").stop(Tween)
+	get_node("Tile_15/Tween").stop(Tween)
+	check_true()
+
+func check_true():
+	var waiting_timer_1 = Timer.new()
+	waiting_timer_1.set_wait_time(0.2)
+	waiting_timer_1.set_one_shot(true)
+	self.add_child(waiting_timer_1)
+	waiting_timer_1.start()
+	yield(waiting_timer_1, "timeout")
+	get_tree().change_scene("res://scenes/parabens_scene.tscn")
 
 func _on_Button_pressed():
 	$botao_fifteen_animation.play("embaralhar_botao")
+	$touch_botao.play()
 	var waiting_timer = Timer.new()
 	waiting_timer.set_wait_time(0.3)
 	waiting_timer.set_one_shot(true)
@@ -222,6 +282,7 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	$botao_fifteen_animation.play("inicio_botao")
+	$touch_botao.play()
 	var waiting_timer = Timer.new()
 	waiting_timer.set_wait_time(0.3)
 	waiting_timer.set_one_shot(true)

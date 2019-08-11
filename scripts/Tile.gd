@@ -13,4 +13,5 @@ func try_move(rel_vec):
 	if test_move(transform,rel_vec): return false
 	tween.interpolate_property(self,"position",position,position+rel_vec,0.25,Tween.TRANS_QUINT,Tween.EASE_IN_OUT)
 	tween.start()
+	$touch_botao.play()
 	return true
