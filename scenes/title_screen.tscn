@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://sprites/tela inicial.png" type="Texture" id=2]
 [ext_resource path="res://sprites/botao_sobre.png" type="Texture" id=3]
 [ext_resource path="res://sprites/botao_jogar.png" type="Texture" id=4]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=5]
+[ext_resource path="res://sprites/sair_botao.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "botao_jogar"
@@ -23,7 +25,23 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "sobre_botao"
+resource_name = "botao_sair"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("sair_button:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.8, 0.8 ), Vector2( 0.7, 0.7 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 0.3
 step = 0.15
 tracks/0/type = "value"
@@ -69,6 +87,21 @@ flat = true
 
 [node name="animation_botoes" type="AnimationPlayer" parent="."]
 anims/botao_jogar = SubResource( 1 )
-anims/sobre_botao = SubResource( 2 )
+anims/botao_sair = SubResource( 2 )
+anims/sobre_botao = SubResource( 3 )
+
+[node name="touch_botao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="sair_button" type="Button" parent="."]
+margin_left = 315.0
+margin_top = 31.0
+margin_right = 590.0
+margin_bottom = 152.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.7, 0.7 )
+icon = ExtResource( 6 )
+flat = true
 [connection signal="pressed" from="sobre_botao" to="." method="_on_sobre_botao_pressed"]
 [connection signal="pressed" from="jogar_botao" to="." method="_on_jogar_botao_pressed"]
+[connection signal="pressed" from="sair_button" to="." method="_on_sair_button_pressed"]

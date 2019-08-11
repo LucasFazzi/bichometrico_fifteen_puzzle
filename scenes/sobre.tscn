@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/sobre.gd" type="Script" id=1]
+[ext_resource path="res://sprites/tela facil.png" type="Texture" id=2]
+[ext_resource path="res://sprites/caixa texto3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/caixa texto4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/botao_inicio.png" type="Texture" id=5]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Quicksand-Bold.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/Quicksand-Bold.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = SubResource( 3 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "animacao_botao"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("inicio:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="sobre" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 60.0, 119.0 ]
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 921.5, 537.5 )
+scale = Vector2( 1.065, 1.11143 )
+texture = ExtResource( 2 )
+
+[node name="box" type="Sprite" parent="."]
+position = Vector2( 1307, 545 )
+rotation = 1.5708
+scale = Vector2( 0.781711, 1.60868 )
+texture = ExtResource( 3 )
+
+[node name="box2" type="Sprite" parent="."]
+position = Vector2( 528, 470 )
+rotation = 1.5708
+scale = Vector2( 0.346715, 2.03914 )
+texture = ExtResource( 4 )
+
+[node name="texto1" type="RichTextLabel" parent="."]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+margin_left = 1680.0
+margin_top = 118.0
+margin_right = 2398.0
+margin_bottom = 871.0
+rect_rotation = 90.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "O quebra-cabeça dos 15 é um ótimo exercício para o desenvolvimento da criança, tanto no que se refere à memorização rápida mas também no auxilio ao processo em tomadas de decisões longas, atuando com a lógica espacial e a necessidade de se pensar em organização por diferentes modos.
+As partidas de quebra-cabeça dos 15 auxiliam a criança a agir em frentes diversas, interpretando uma imagem desmontada e colocando essa informação abstrata de um modo que ela seja então vista de maneira concreta. O quebra-cabeça dos 15 também é aprendizado! Vamos jogar?"
+
+[node name="texto2" type="RichTextLabel" parent="."]
+modulate = Color( 0.411765, 0.411765, 0.411765, 1 )
+margin_left = 715.0
+margin_top = 119.0
+margin_right = 1324.0
+margin_bottom = 752.0
+rect_rotation = 90.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Código fonte:
+Coder Dojo https://github.com/programaths/coder-dojo-godot
+
+Trilha Sonora: AzzyGames
+https://devdevious.itch.io
+(https://www.patreon.com/sharkybutt)
+
+Efeitos Sonoros:
+1) https://freesound.org/people/NenadSimic/
+2) https://freesound.org/people/suntemple/
+3) https://freesound.org/people/mickleness/
+4) https://opengameart.org/users/haeldb"
+
+[node name="inicio" type="Button" parent="."]
+margin_left = 163.0
+margin_top = 736.0
+margin_right = 438.0
+margin_bottom = 857.0
+rect_rotation = 90.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="animacao_botao" type="AnimationPlayer" parent="."]
+anims/animacao_botao = SubResource( 5 )
+
+[node name="inicio_botao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="pressed" from="inicio" to="." method="_on_incio_pressed"]

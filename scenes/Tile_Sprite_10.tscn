@@ -1,27 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://sprites/polvo10.png" type="Texture" id=1]
-[ext_resource path="res://sprites/praia10.png" type="Texture" id=2]
+[ext_resource path="res://sprites/praia10.png" type="Texture" id=1]
+[ext_resource path="res://sprites/fazenda10.png" type="Texture" id=2]
 [ext_resource path="res://sprites/selva10.png" type="Texture" id=3]
+[ext_resource path="res://sprites/polvo10.png" type="Texture" id=4]
+[ext_resource path="res://sprites/neve10.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "10a",
+"name": "10b",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "10b",
+"name": "10d",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "10c",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "10a",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "10e",
+"speed": 5.0
 } ]
 
 [node name="Tile_Sprite_10" type="AnimatedSprite"]
 frames = SubResource( 1 )
-animation = "10a"
+animation = "10e"

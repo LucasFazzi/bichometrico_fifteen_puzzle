@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scripts/Fifteen3_Board.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Fifteen4_Board.gd" type="Script" id=1]
 [ext_resource path="res://sprites/fundo.png" type="Texture" id=2]
 [ext_resource path="res://sprites/tela medio.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/botao_embaralhar.png" type="Texture" id=5]
 [ext_resource path="res://sprites/botao_inicio.png" type="Texture" id=6]
 [ext_resource path="res://sprites/caixa texto sobre o jogo.png" type="Texture" id=7]
-[ext_resource path="res://sprites/selva_completo.png" type="Texture" id=8]
+[ext_resource path="res://sprites/fazenda_completo.png" type="Texture" id=8]
 [ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Fifteeen3" type="Node2D"]
+[node name="Fifteeen4" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 1327.49, 65.7233, 1547.0, 1464.0, 1553.0, 288.835, 511.63, 734.641, 957.537 ],

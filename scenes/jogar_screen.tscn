@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/jogar_screen.gd" type="Script" id=1]
 [ext_resource path="res://sprites/fundo.png" type="Texture" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://sprites/caixa texto1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/polvo_botao.png" type="Texture" id=5]
 [ext_resource path="res://sprites/praia_botao.png" type="Texture" id=6]
-[ext_resource path="res://sprites/selva_botao.png" type="Texture" id=7]
-[ext_resource path="res://sprites/botao_inicio.png" type="Texture" id=8]
+[ext_resource path="res://sprites/fazenda_botao.png" type="Texture" id=7]
+[ext_resource path="res://sprites/neve_botao.png" type="Texture" id=8]
+[ext_resource path="res://sprites/selva_botao.png" type="Texture" id=9]
+[ext_resource path="res://sprites/botao_inicio.png" type="Texture" id=10]
+[ext_resource path="res://SFX/menu_selection_1.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Quicksand-Bold.otf"
@@ -16,7 +19,24 @@ font_path = "res://fonts/Quicksand-Bold.otf"
 size = 100
 font_data = SubResource( 1 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
+resource_name = "botao_fazenda"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("fazenda_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
 resource_name = "botao_inicio"
 length = 0.3
 step = 0.15
@@ -33,8 +53,24 @@ tracks/0/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 0.9, 0.9 ), Vector2( 0.8, 0.8 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "botao_polvo"
+[sub_resource type="Animation" id=5]
+resource_name = "botao_neve"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("neve_botao:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
 length = 0.3
 step = 0.15
 tracks/0/type = "value"
@@ -50,8 +86,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "botao_praia"
+[sub_resource type="Animation" id=7]
 length = 0.3
 step = 0.15
 tracks/0/type = "value"
@@ -67,8 +102,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "botao_selva"
+[sub_resource type="Animation" id=8]
 length = 0.3
 step = 0.15
 tracks/0/type = "value"
@@ -84,8 +118,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "texto"
+[sub_resource type="Animation" id=9]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -104,7 +137,8 @@ tracks/0/keys = {
 [node name="jogar_screen" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 31.0, 1149.0, 1241.0, 1219.0 ]
+"_edit_horizontal_guides_": [ 31.0, 1149.0, 1241.0, 1219.0, 640.0, 433.0 ],
+"_edit_vertical_guides_": [ 573.0 ]
 }
 
 [node name="fundobranco" type="Sprite" parent="."]
@@ -114,7 +148,7 @@ texture = ExtResource( 2 )
 
 [node name="fundo1" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.490196 )
-position = Vector2( 900, 526 )
+position = Vector2( 902, 524 )
 texture = ExtResource( 3 )
 
 [node name="caixatexto" type="Sprite" parent="."]
@@ -154,13 +188,32 @@ rect_rotation = 90.0
 icon = ExtResource( 6 )
 flat = true
 
+[node name="fazenda_botao" type="Button" parent="."]
+margin_left = 581.0
+margin_top = 263.0
+margin_right = 808.0
+margin_bottom = 484.0
+rect_rotation = 90.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="neve_botao" type="Button" parent="."]
+margin_left = 581.0
+margin_top = 593.0
+margin_right = 808.0
+margin_bottom = 814.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 0.07, 0 )
+icon = ExtResource( 8 )
+flat = true
+
 [node name="selva_botao" type="Button" parent="."]
 margin_left = 941.0
 margin_top = 760.0
 margin_right = 1169.0
 margin_bottom = 981.0
 rect_rotation = 90.0
-icon = ExtResource( 7 )
+icon = ExtResource( 9 )
 flat = true
 
 [node name="inicio_botao" type="Button" parent="."]
@@ -170,19 +223,26 @@ margin_right = 446.0
 margin_bottom = 546.0
 rect_rotation = 90.0
 rect_scale = Vector2( 0.8, 0.8 )
-icon = ExtResource( 8 )
+icon = ExtResource( 10 )
 flat = true
 
 [node name="animation_botoes" type="AnimationPlayer" parent="."]
-anims/botao_inicio = SubResource( 7 )
-anims/botao_polvo = SubResource( 3 )
-anims/botao_praia = SubResource( 4 )
-anims/botao_selva = SubResource( 5 )
+anims/botao_fazenda = SubResource( 3 )
+anims/botao_inicio = SubResource( 4 )
+anims/botao_neve = SubResource( 5 )
+anims/botao_polvo = SubResource( 6 )
+anims/botao_praia = SubResource( 7 )
+anims/botao_selva = SubResource( 8 )
 
 [node name="animation_texto" type="AnimationPlayer" parent="."]
 autoplay = "texto"
-anims/texto = SubResource( 6 )
+anims/texto = SubResource( 9 )
+
+[node name="touch_botao" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
 [connection signal="pressed" from="mar_botao" to="." method="_on_mar_botao_pressed"]
 [connection signal="pressed" from="praia_botao" to="." method="_on_praia_botao_pressed"]
+[connection signal="pressed" from="fazenda_botao" to="." method="_on_fazenda_botao_pressed"]
+[connection signal="pressed" from="neve_botao" to="." method="_on_neve_botao_pressed"]
 [connection signal="pressed" from="selva_botao" to="." method="_on_selva_botao_pressed"]
 [connection signal="pressed" from="inicio_botao" to="." method="_on_Button_pressed"]
