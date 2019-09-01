@@ -12,7 +12,7 @@ func _on_mar_botao_pressed():
 	self.add_child(waiting_timer)
 	waiting_timer.start()
 	yield(waiting_timer, "timeout")
-	get_tree().change_scene("res://scenes/Fifteen1.tscn")
+	get_tree().change_scene("res://scenes/Fifteen1_1.tscn")
 
 func _on_praia_botao_pressed():
 	$animation_botoes.play("botao_praia")
@@ -23,7 +23,7 @@ func _on_praia_botao_pressed():
 	self.add_child(waiting_timer)
 	waiting_timer.start()
 	yield(waiting_timer, "timeout")
-	get_tree().change_scene("res://scenes/Fifteen2.tscn")
+	get_tree().change_scene("res://scenes/Fifteen1_2.tscn")
 
 func _on_selva_botao_pressed():
 	$animation_botoes.play("botao_selva")
@@ -34,7 +34,7 @@ func _on_selva_botao_pressed():
 	self.add_child(waiting_timer)
 	waiting_timer.start()
 	yield(waiting_timer, "timeout")
-	get_tree().change_scene("res://scenes/Fifteen3.tscn")
+	get_tree().change_scene("res://scenes/Fifteen1_3.tscn")
 
 func _on_fazenda_botao_pressed():
 	$animation_botoes.play("botao_fazenda")
@@ -45,7 +45,7 @@ func _on_fazenda_botao_pressed():
 	self.add_child(waiting_timer)
 	waiting_timer.start()
 	yield(waiting_timer, "timeout")
-	get_tree().change_scene("res://scenes/Fifteen4.tscn")
+	get_tree().change_scene("res://scenes/Fifteen1_4.tscn")
 
 func _on_neve_botao_pressed():
 	$animation_botoes.play("botao_neve")
@@ -56,7 +56,7 @@ func _on_neve_botao_pressed():
 	self.add_child(waiting_timer)
 	waiting_timer.start()
 	yield(waiting_timer, "timeout")
-	get_tree().change_scene("res://scenes/Fifteen5.tscn")
+	get_tree().change_scene("res://scenes/Fifteen1_5.tscn")
 
 func _on_Button_pressed():
 	$animation_botoes.play("botao_inicio")
