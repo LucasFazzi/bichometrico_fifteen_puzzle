@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/caixa texto sobre o jogo.png" type="Texture" id=1]
+
+[node name="balao" type="Sprite"]
+position = Vector2( 1582, 752 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )

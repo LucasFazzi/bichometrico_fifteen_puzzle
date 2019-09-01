@@ -135,6 +135,8 @@ tracks/0/keys = {
 }
 
 [node name="jogar_screen" type="Node2D"]
+position = Vector2( 4, 1800 )
+rotation = 4.71239
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 31.0, 1149.0, 1241.0, 1219.0, 640.0, 433.0 ],
